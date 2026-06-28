@@ -1634,9 +1634,9 @@ body:has(.mapboxgl-canvas):has(.font-myTitle:hover) .mapboxgl-canvas {
 /* Coordinates display below image */
 .loading-coordinates {
   position: absolute;
-  top: 50%;
+  top: calc(50% + 12.5vw + 3px);
   left: 50%;
-  transform: translate(-50%, calc(50% + 220px));
+  transform: translateX(-50%);
   z-index: 99;
   text-align: center;
   font-family: 'Diatype';
@@ -6352,6 +6352,11 @@ body.index-page.archive-page #archive-gallery.archive-grid-view [data-item-index
   body.home-page .loading-image-center {
     width: clamp(150px, 42vw, 280px) !important;
     height: clamp(188px, 52.5vw, 350px) !important;
+  }
+
+  body.home-page .loading-coordinates {
+    top: calc(50% + clamp(94px, 26.25vw, 175px) + 3px) !important;
+    transform: translateX(-50%) !important;
   }
 
   body.home-page .face-preview-panel {
