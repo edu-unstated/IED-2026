@@ -61,7 +61,7 @@ const archiveRows = [
   { anno: '1964', autore: 'Scorza', regione: 'Calabria', abitanti: 'Meno di 10', documento: 'Fotografia' },
   { anno: '1965', autore: 'Varani', regione: 'Sicilia', abitanti: 'Tra 10 e 100', documento: 'Note di campo' },
   { anno: '1966', autore: 'Fiore', regione: 'Puglia', abitanti: 'Tra 100 e 1000', documento: '' },
-  { anno: '1967', autore: 'Maffei', regione: 'Campania', abitanti: 'Piu di 1000', documento: '' },
+  { anno: '1967', autore: 'Maffei', regione: 'Campania', abitanti: 'Pi\u00f9 di 1000', documento: '' },
   { anno: '1968', autore: 'Ferri', regione: '', abitanti: '', documento: '' },
 ];
 
@@ -126,13 +126,23 @@ function getItemField(item, key) {
 
 function buildFilterColumns() {
   const unique = (arr) => [...new Set(arr.filter(Boolean))];
-  const abitantiOrder = ['Meno di 10', 'Tra 10 e 100', 'Tra 100 e 1000', 'Piu di 1000'];
+  const abitantiOrder = new Map([
+    [normalizeComparable('Meno di 10'), 0],
+    [normalizeComparable('Tra 10 e 100'), 1],
+    [normalizeComparable('Tra 100 e 1000'), 2],
+    [normalizeComparable('Pi\u00f9 di 1000'), 3],
+  ]);
+  const sortAbitanti = (a, b) => {
+    const aIndex = abitantiOrder.get(normalizeComparable(a)) ?? Number.MAX_SAFE_INTEGER;
+    const bIndex = abitantiOrder.get(normalizeComparable(b)) ?? Number.MAX_SAFE_INTEGER;
+    return aIndex - bIndex || a.localeCompare(b, 'it');
+  };
 
   return [
     { key: 'year', label: 'anno', values: unique(allItems.map((item) => String(item.year || ''))).sort() },
     { key: 'autore', label: 'autore', values: unique(allItems.map((item) => item.autore)).sort() },
     { key: 'regione', label: 'regione', values: unique(allItems.map((item) => item.regione)).sort() },
-    { key: 'abitanti', label: 'abitanti', values: unique(allItems.map((item) => item.abitanti)).sort((a, b) => abitantiOrder.indexOf(a) - abitantiOrder.indexOf(b)) },
+    { key: 'abitanti', label: 'abitanti', values: unique(allItems.map((item) => item.abitanti)).sort(sortAbitanti) },
     { key: 'documento', label: 'documento', values: unique(allItems.map((item) => item.documento)).sort() },
   ];
 }

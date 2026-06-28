@@ -14,7 +14,7 @@
       "description": "Monteferro, 1980, Scorza",
       "autore": "Scorza",
       "regione": "Basilicata",
-      "abitanti": "Tra 100 e 1000",
+      "abitanti": "Meno di 10",
       "documento": "Fotografia"
     },
     {
@@ -30,7 +30,7 @@
       "description": "Colle Ombra, 1972, Ferri",
       "autore": "Ferri",
       "regione": "Sicilia",
-      "abitanti": "Tra 10 e 100",
+      "abitanti": "Più di 1000",
       "documento": "Fotografia"
     },
     {
@@ -77,7 +77,7 @@
       "description": "Riva Spenta, 1973, Ferri",
       "autore": "Ferri",
       "regione": "Sicilia",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Meno di 10",
       "documento": "Fotografia"
     },
     {
@@ -110,7 +110,7 @@
       "description": "Castel Ruvo, 1984, Fiore",
       "autore": "Fiore",
       "regione": "Puglia",
-      "abitanti": "Tra 100 e 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -125,7 +125,7 @@
       "description": "Note di campo, 1970, Fiore",
       "autore": "Fiore",
       "regione": "Basilicata",
-      "abitanti": "Tra 100 e 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Note di campo"
     },
     {
@@ -142,7 +142,7 @@
       "description": "Fonte Chiusa, 1975, Maffei",
       "autore": "Maffei",
       "regione": "Calabria",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -174,7 +174,7 @@
       "description": "Borgo Cupo, 1970, Varani",
       "autore": "Varani",
       "regione": "Puglia",
-      "abitanti": "Tra 100 e 1000",
+      "abitanti": "Meno di 10",
       "documento": "Fotografia"
     },
     {
@@ -189,7 +189,7 @@
       "description": "Note di campo, 1983, Scorza",
       "autore": "Scorza",
       "regione": "Campania",
-      "abitanti": "Tra 10 e 100",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Note di campo"
     },
     {
@@ -205,7 +205,7 @@
       "description": "San Velio, 1986, Scorza",
       "autore": "Scorza",
       "regione": "Calabria",
-      "abitanti": "Tra 100 e 1000",
+      "abitanti": "Più di 1000",
       "documento": "Fotografia"
     },
     {
@@ -222,7 +222,7 @@
       "description": "Colle Ombra, 1970, Varani",
       "autore": "Varani",
       "regione": "Sicilia",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Meno di 10",
       "documento": "Fotografia"
     },
     {
@@ -238,7 +238,7 @@
       "description": "San Velio, 1976, Ferri",
       "autore": "Ferri",
       "regione": "Calabria",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -253,7 +253,7 @@
       "description": "Note di campo, 1970, Varani",
       "autore": "Varani",
       "regione": "Campania",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Meno di 10",
       "documento": "Note di campo"
     },
     {
@@ -285,7 +285,7 @@
       "description": "Fonte Chiusa, 1976, Fiore",
       "autore": "Fiore",
       "regione": "Calabria",
-      "abitanti": "Tra 100 e 1000",
+      "abitanti": "Meno di 10",
       "documento": "Fotografia"
     },
     {
@@ -316,7 +316,7 @@
       "description": "Note di campo, 1969, Varani",
       "autore": "Varani",
       "regione": "Campania",
-      "abitanti": "Tra 100 e 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Note di campo"
     },
     {
@@ -332,7 +332,7 @@
       "description": "Monteferro, 1970, Fiore",
       "autore": "Fiore",
       "regione": "Basilicata",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     },
     {
@@ -366,7 +366,7 @@
       "description": "Rocca Secca, 1981, Fiore",
       "autore": "Fiore",
       "regione": "Campania",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -397,7 +397,7 @@
       "description": "Pietra Lenta, 1964, Scorza",
       "autore": "Scorza",
       "regione": "Calabria",
-      "abitanti": "Tra 10 e 100",
+      "abitanti": "Più di 1000",
       "documento": "Fotografia"
     },
     {
@@ -413,7 +413,7 @@
       "description": "Borgo Cupo, 1967, Ferri",
       "autore": "Ferri",
       "regione": "Puglia",
-      "abitanti": "Meno di 10",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     },
     {
@@ -429,7 +429,7 @@
       "description": "Rocca Secca, 1986, Maffei",
       "autore": "Maffei",
       "regione": "Campania",
-      "abitanti": "Tra 100 e 1000",
+      "abitanti": "Più di 1000",
       "documento": "Fotografia"
     },
     {
@@ -444,7 +444,7 @@
       "description": "Note di campo, 1973, Ferri",
       "autore": "Ferri",
       "regione": "Campania",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Più di 1000",
       "documento": "Note di campo"
     },
     {
@@ -460,7 +460,7 @@
       "description": "Riva Spenta, 1975, Ferri",
       "autore": "Ferri",
       "regione": "Sicilia",
-      "abitanti": "Meno di 10",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     },
     {
@@ -476,7 +476,7 @@
       "description": "Pietra Lenta, 1964, Maffei",
       "autore": "Maffei",
       "regione": "Calabria",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -492,7 +492,7 @@
       "description": "Fonte Chiusa, 1969, Scorza",
       "autore": "Scorza",
       "regione": "Calabria",
-      "abitanti": "Tra 10 e 100",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     },
     {
@@ -507,7 +507,7 @@
       "description": "Note di campo, 1975, Ferri",
       "autore": "Ferri",
       "regione": "Basilicata",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Meno di 10",
       "documento": "Note di campo"
     },
     {
@@ -523,7 +523,7 @@
       "description": "Vallefredda, 1980, Scorza",
       "autore": "Scorza",
       "regione": "Campania",
-      "abitanti": "Tra 100 e 1000",
+      "abitanti": "Meno di 10",
       "documento": "Fotografia"
     },
     {
@@ -539,7 +539,7 @@
       "description": "Serra Vasta, 1975, Fiore",
       "autore": "Fiore",
       "regione": "Calabria",
-      "abitanti": "Meno di 10",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -556,7 +556,7 @@
       "description": "Vallefredda, 1984, Fiore",
       "autore": "Fiore",
       "regione": "Campania",
-      "abitanti": "Meno di 10",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     },
     {
@@ -571,7 +571,7 @@
       "description": "Note di campo, 1969, Scorza",
       "autore": "Scorza",
       "regione": "Puglia",
-      "abitanti": "Tra 10 e 100",
+      "abitanti": "Più di 1000",
       "documento": "Note di campo"
     },
     {
@@ -587,7 +587,7 @@
       "description": "Costa Nera, 1974, Fiore",
       "autore": "Fiore",
       "regione": "Calabria",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     },
     {
@@ -603,7 +603,7 @@
       "description": "Riva Spenta, 1975, Maffei",
       "autore": "Maffei",
       "regione": "Sicilia",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Meno di 10",
       "documento": "Fotografia"
     },
     {
@@ -619,7 +619,7 @@
       "description": "Fonte Secca, 1974, Varani",
       "autore": "Varani",
       "regione": "Basilicata",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -634,7 +634,7 @@
       "description": "Note di campo, 1975, Maffei",
       "autore": "Maffei",
       "regione": "Sicilia",
-      "abitanti": "Tra 10 e 100",
+      "abitanti": "Più di 1000",
       "documento": "Note di campo"
     },
     {
@@ -650,7 +650,7 @@
       "description": "Serra Antica, 1977, Fiore",
       "autore": "Fiore",
       "regione": "Campania",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Meno di 10",
       "documento": "Fotografia"
     },
     {
@@ -683,7 +683,7 @@
       "description": "Poggio Nero, 1981, Varani",
       "autore": "Varani",
       "regione": "Basilicata",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -698,7 +698,7 @@
       "description": "Note di campo, 1968, Maffei",
       "autore": "Maffei",
       "regione": "Calabria",
-      "abitanti": "Tra 100 e 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Note di campo"
     },
     {
@@ -715,7 +715,7 @@
       "description": "Serra Antica, 1980, Maffei",
       "autore": "Maffei",
       "regione": "Campania",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -731,7 +731,7 @@
       "description": "Serra Antica, 1980, Ferri",
       "autore": "Ferri",
       "regione": "Campania",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Meno di 10",
       "documento": "Fotografia"
     },
     {
@@ -747,7 +747,7 @@
       "description": "Zagara, 1972, Maffei",
       "autore": "Maffei",
       "regione": "Calabria",
-      "abitanti": "Meno di 10",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     },
     {
@@ -762,7 +762,7 @@
       "description": "Note di campo, 1973, Scorza",
       "autore": "Scorza",
       "regione": "Sicilia",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Meno di 10",
       "documento": "Note di campo"
     },
     {
@@ -778,7 +778,7 @@
       "description": "Castel Ruvo, 1977, Ferri",
       "autore": "Ferri",
       "regione": "Puglia",
-      "abitanti": "Tra 10 e 100",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     },
     {
@@ -794,7 +794,7 @@
       "description": "Fonte Chiusa, 1968, Maffei",
       "autore": "Maffei",
       "regione": "Calabria",
-      "abitanti": "Meno di 10",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     },
     {
@@ -811,7 +811,7 @@
       "description": "Pietra Lenta, 1972, Ferri",
       "autore": "Ferri",
       "regione": "Calabria",
-      "abitanti": "Tra 100 e 1000",
+      "abitanti": "Meno di 10",
       "documento": "Fotografia"
     },
     {
@@ -826,7 +826,7 @@
       "description": "Note di campo, 1979, Maffei",
       "autore": "Maffei",
       "regione": "Basilicata",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Meno di 10",
       "documento": "Note di campo"
     },
     {
@@ -858,7 +858,7 @@
       "description": "Rocca Secca, 1971, Varani",
       "autore": "Varani",
       "regione": "Campania",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Meno di 10",
       "documento": "Fotografia"
     },
     {
@@ -875,7 +875,7 @@
       "description": "Valle Cupa, 1964, Maffei",
       "autore": "Maffei",
       "regione": "Calabria",
-      "abitanti": "Tra 100 e 1000",
+      "abitanti": "Meno di 10",
       "documento": "Fotografia"
     },
     {
@@ -890,7 +890,7 @@
       "description": "Note di campo, 1980, Maffei",
       "autore": "Maffei",
       "regione": "Basilicata",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Note di campo"
     },
     {
@@ -906,7 +906,7 @@
       "description": "Fonte Chiusa, 1966, Scorza",
       "autore": "Scorza",
       "regione": "Calabria",
-      "abitanti": "Meno di 10",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -922,7 +922,7 @@
       "description": "Borgo Cupo, 1981, Fiore",
       "autore": "Fiore",
       "regione": "Puglia",
-      "abitanti": "Meno di 10",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -938,7 +938,7 @@
       "description": "Riva Spenta, 1979, Ferri",
       "autore": "Ferri",
       "regione": "Sicilia",
-      "abitanti": "Tra 10 e 100",
+      "abitanti": "Più di 1000",
       "documento": "Fotografia"
     },
     {
@@ -953,7 +953,7 @@
       "description": "Note di campo, 1964, Maffei",
       "autore": "Maffei",
       "regione": "Puglia",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Note di campo"
     },
     {
@@ -969,7 +969,7 @@
       "description": "Piana Morta, 1968, Ferri",
       "autore": "Ferri",
       "regione": "Basilicata",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -985,7 +985,7 @@
       "description": "Vallefredda, 1980, Ferri",
       "autore": "Ferri",
       "regione": "Campania",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -1001,7 +1001,7 @@
       "description": "Borgo Salso, 1977, Maffei",
       "autore": "Maffei",
       "regione": "Puglia",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     },
     {
@@ -1016,7 +1016,7 @@
       "description": "Note di campo, 1964, Varani",
       "autore": "Varani",
       "regione": "Campania",
-      "abitanti": "Meno di 10",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Note di campo"
     },
     {
@@ -1032,7 +1032,7 @@
       "description": "Colle Ombra, 1985, Varani",
       "autore": "Varani",
       "regione": "Sicilia",
-      "abitanti": "Meno di 10",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     },
     {
@@ -1048,7 +1048,7 @@
       "description": "Castel Ruvo, 1981, Ferri",
       "autore": "Ferri",
       "regione": "Puglia",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -1064,7 +1064,7 @@
       "description": "Poggio Nero, 1978, Scorza",
       "autore": "Scorza",
       "regione": "Basilicata",
-      "abitanti": "Meno di 10",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -1079,7 +1079,7 @@
       "description": "Note di campo, 1975, Varani",
       "autore": "Varani",
       "regione": "Puglia",
-      "abitanti": "Tra 10 e 100",
+      "abitanti": "Più di 1000",
       "documento": "Note di campo"
     },
     {
@@ -1095,7 +1095,7 @@
       "description": "Zagara, 1982, Fiore",
       "autore": "Fiore",
       "regione": "Calabria",
-      "abitanti": "Meno di 10",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     },
     {
@@ -1111,7 +1111,7 @@
       "description": "Colle Ombra, 1976, Varani",
       "autore": "Varani",
       "regione": "Sicilia",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Fotografia"
     },
     {
@@ -1128,7 +1128,7 @@
       "description": "Poggio Nero, 1980, Maffei",
       "autore": "Maffei",
       "regione": "Basilicata",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     },
     {
@@ -1160,7 +1160,7 @@
       "description": "Note di campo, 1977, Varani",
       "autore": "Varani",
       "regione": "Sicilia",
-      "abitanti": "Piu di 1000",
+      "abitanti": "Tra 10 e 100",
       "documento": "Note di campo"
     },
     {
@@ -1177,7 +1177,7 @@
       "description": "Santa Rena, 1980, Fiore",
       "autore": "Fiore",
       "regione": "Calabria",
-      "abitanti": "Tra 100 e 1000",
+      "abitanti": "Più di 1000",
       "documento": "Fotografia"
     },
     {
@@ -1194,7 +1194,7 @@
       "description": "Rocca Secca, 1971, Scorza",
       "autore": "Scorza",
       "regione": "Campania",
-      "abitanti": "Tra 10 e 100",
+      "abitanti": "Più di 1000",
       "documento": "Fotografia"
     },
     {
@@ -1210,7 +1210,7 @@
       "description": "Poggio Nero, 1971, Fiore",
       "autore": "Fiore",
       "regione": "Basilicata",
-      "abitanti": "Tra 10 e 100",
+      "abitanti": "Tra 100 e 1000",
       "documento": "Fotografia"
     }
   ]
