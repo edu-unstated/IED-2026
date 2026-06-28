@@ -184,7 +184,8 @@ function setArchiveFiltersVisible(visible) {
 function updateArchiveMobileFilterLabel() {
   if (!archiveMobileFilterToggle) return;
 
-  const selectedLabels = [...activeFilterLabels.values()];
+  const selectedEntries = [...activeFilterLabels.entries()];
+  const selectedLabels = selectedEntries.map(([, value]) => value);
   archiveMobileFilterToggle.textContent = '';
 
   const label = document.createElement('span');
@@ -195,7 +196,19 @@ function updateArchiveMobileFilterLabel() {
   if (selectedLabels.length) {
     const summary = document.createElement('span');
     summary.className = 'archive-mobile-filter-summary';
-    summary.textContent = selectedLabels.join(', ');
+
+    selectedEntries.forEach(([token, value], index) => {
+      if (index > 0) {
+        summary.appendChild(document.createTextNode(', '));
+      }
+
+      const chip = document.createElement('span');
+      chip.className = 'archive-mobile-filter-chip';
+      chip.dataset.mobileFilterToken = token;
+      chip.textContent = value;
+      summary.appendChild(chip);
+    });
+
     archiveMobileFilterToggle.appendChild(summary);
   }
 
@@ -203,6 +216,21 @@ function updateArchiveMobileFilterLabel() {
     'aria-label',
     selectedLabels.length ? `Filtri: ${selectedLabels.join(', ')}` : 'Filtri'
   );
+}
+
+function removeArchiveFilterToken(token) {
+  if (token) {
+    activeFilters.delete(token);
+    activeFilterLabels.delete(token);
+  } else {
+    activeFilters.clear();
+    activeFilterLabels.clear();
+  }
+
+  updateArchiveFilterColorState();
+  updateArchiveMobileFilterLabel();
+  syncRegionExpansion();
+  filterVisible(searchInput?.value || '');
 }
 
 function renderFilters() {
@@ -564,7 +592,20 @@ archiveToggleButtons.forEach((button) => {
 });
 
 if (archiveMobileFilterToggle) {
-  archiveMobileFilterToggle.addEventListener('click', () => {
+  archiveMobileFilterToggle.addEventListener('click', (event) => {
+    const selectedFilterTarget = event.target.closest('.archive-mobile-filter-summary');
+
+    if (selectedFilterTarget && activeFilters.size) {
+      const selectedChip = event.target.closest('[data-mobile-filter-token]');
+
+      event.preventDefault();
+      event.stopPropagation();
+      manualToggle = false;
+      removeArchiveFilterToken(selectedChip?.dataset.mobileFilterToken || '');
+      setArchiveFiltersVisible(false);
+      return;
+    }
+
     manualToggle = true;
     setArchiveFiltersVisible(true);
   });

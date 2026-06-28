@@ -6401,6 +6401,13 @@ body.index-page.archive-page #archive-gallery.archive-grid-view [data-item-index
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
     color: var(--muted, #909090) !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+  }
+
+  body.index-page.archive-page .archive-mobile-filter-chip,
+  body.archive-page .archive-mobile-filter-chip {
+    cursor: pointer !important;
   }
 }
 
