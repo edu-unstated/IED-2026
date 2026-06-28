@@ -1,6 +1,7 @@
 const rowsHost = document.getElementById('archive-rows');
 const galleryHost = document.getElementById('archive-gallery');
 const searchInput = document.getElementById('search');
+const searchClearButton = document.getElementById('archive-search-clear');
 const archiveToggleButtons = document.querySelectorAll('[data-archive-toggle]');
 const archiveMobileFilterToggle = document.getElementById('archive-mobile-filter-toggle');
 const archiveMobileFilterClose = document.getElementById('archive-mobile-filter-close');
@@ -693,9 +694,54 @@ if (stickyHeader) {
 }); */
 
 if (searchInput) {
+  const updateSearchClearButton = () => {
+    if (searchClearButton) searchClearButton.hidden = !searchInput.value;
+  };
+
   searchInput.addEventListener('input', (event) => {
     filterVisible(event.target.value);
+    updateSearchClearButton();
   });
+
+  if (searchClearButton) {
+    searchClearButton.addEventListener('click', () => {
+      searchInput.value = '';
+      filterVisible('');
+      updateSearchClearButton();
+      searchInput.focus();
+    });
+  }
+
+  updateSearchClearButton();
+}
+
+function initializeFooterSearchClear() {
+  document.querySelectorAll('.footer-search-form').forEach((form) => {
+    const input = form.querySelector('.footer-search');
+    const clearButton = form.querySelector('.footer-search-clear');
+    if (!input || !clearButton || form.dataset.footerSearchReady === 'true') return;
+
+    form.dataset.footerSearchReady = 'true';
+
+    const updateClearButton = () => {
+      clearButton.hidden = !input.value;
+    };
+
+    input.addEventListener('input', updateClearButton);
+    clearButton.addEventListener('click', () => {
+      input.value = '';
+      updateClearButton();
+      input.focus();
+    });
+
+    updateClearButton();
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeFooterSearchClear);
+} else {
+  initializeFooterSearchClear();
 }
 
 setArchiveFiltersVisible(false);
@@ -1104,7 +1150,23 @@ function initializeStatisticsPage() {
   const getSvg = (chart) => chart.matches('svg') ? chart : chart.querySelector('svg');
   const numberPattern = /^\s*(\d+(?:[.,]\d+)?)(%)?\s*$/;
   const trailingNumberPattern = /^(.*?)(\d+(?:[.,]\d+)?)(%)?\s*$/;
-  const randomDelay = () => 5000 + Math.random() * 5000;
+  const statTiming = {
+    liveDelayMin: 1200,
+    liveDelayRange: 1600,
+    pulseDuration: 360,
+    revealDuration: 520,
+    barDuration: 430,
+    liveDuration: 420,
+    ageLiveDuration: 900,
+    ageLiveDelayMin: 4200,
+    ageLiveDelayRange: 2800,
+    lineDuration: 420,
+    revealStagger: 45,
+    itemStagger: 24,
+    lineStagger: 30,
+  };
+  const randomDelay = () => statTiming.liveDelayMin + Math.random() * statTiming.liveDelayRange;
+  const ageRandomDelay = () => statTiming.ageLiveDelayMin + Math.random() * statTiming.ageLiveDelayRange;
   const randomItem = (items) => items[Math.floor(Math.random() * items.length)];
 
   const parseNumericText = (text) => {
@@ -1168,7 +1230,7 @@ function initializeStatisticsPage() {
 
   const fadePulse = (...nodes) => {
     nodes.filter(Boolean).forEach((node) => {
-      node.style.transition = 'opacity 760ms cubic-bezier(.77,0,.175,1)';
+      node.style.transition = `opacity ${statTiming.pulseDuration}ms cubic-bezier(.77,0,.175,1)`;
       node.style.opacity = '.35';
       window.setTimeout(() => {
         node.style.opacity = '1';
@@ -1257,8 +1319,8 @@ function initializeStatisticsPage() {
 
       rect.setAttribute('width', '0');
       window.setTimeout(() => {
-        animate(950, (t) => rect.setAttribute('width', String(targetWidth * t)));
-      }, index * 90);
+        animate(statTiming.revealDuration, (t) => rect.setAttribute('width', String(targetWidth * t)));
+      }, index * statTiming.revealStagger);
     });
   };
 
@@ -1340,12 +1402,12 @@ function initializeStatisticsPage() {
       const label = rect.nextElementSibling;
       window.setTimeout(() => {
         fadePulse(label, rect);
-        animate(780, (t) => {
+        animate(statTiming.barDuration, (t) => {
           const width = target * t;
           rect.setAttribute('width', String(width));
           syncAgeBarLabel(rect, width);
         });
-      }, index * 45);
+      }, index * statTiming.itemStagger);
     });
   };
 
@@ -1411,28 +1473,36 @@ function initializeStatisticsPage() {
       window.setTimeout(() => {
         const label = Array.from(svg.querySelectorAll('text.small[data-stat-live="true"]'))[index];
         fadePulse(rect, label);
-        animate(900, (t) => {
+        animate(statTiming.barDuration, (t) => {
           const height = targetHeight * t;
           const y = baseline - height;
           rect.setAttribute('height', String(height));
           rect.setAttribute('y', String(y));
           syncHouseBarLabel(rect, y);
         });
-      }, index * 45);
+      }, index * statTiming.itemStagger);
     });
   };
 
   const setupLinePosition = (chart) => {
     const svg = getSvg(chart);
     if (!svg) return;
-    svg.querySelectorAll('line.value').forEach((line) => {
+    svg.querySelectorAll('line.value').forEach((line, index) => {
       if (!line.dataset.statTargetX2) line.dataset.statTargetX2 = line.getAttribute('x2') || line.getAttribute('x1') || '0';
-      line.dataset.statScale = String((Number(line.previousElementSibling?.getAttribute('x2') || line.getAttribute('x2') || 430) - Number(line.getAttribute('x1') || 125)) / 100);
-    });
-    svg.querySelectorAll('text').forEach((text) => {
-      const x = Number(text.getAttribute('x') || 0);
-      const parsed = parseNumericText(text.textContent);
-      if (parsed && x >= 390) registerLiveNode(text, parsed, { decimals: 0 });
+      const x1 = Number(line.getAttribute('x1') || 125);
+      const baseX2 = Number(line.previousElementSibling?.getAttribute('x2') || 430);
+      line.dataset.statScale = String((baseX2 - x1) / 100);
+      line.dataset.statBaseX2 = String(baseX2);
+
+      const label = line.nextElementSibling;
+      const parsed = label?.tagName?.toLowerCase() === 'text'
+        ? parseNumericText(label.textContent)
+        : null;
+
+      if (parsed) {
+        label.dataset.statContinuityLineIndex = String(index);
+        registerLiveNode(label, parsed, { decimals: 0 });
+      }
     });
   };
 
@@ -1448,7 +1518,7 @@ function initializeStatisticsPage() {
     svg.querySelectorAll('line.value').forEach((line, index) => {
       const startX = Number(line.getAttribute('x1') || 0);
       const targetX = Number(line.dataset.statTargetX2 || startX);
-      window.setTimeout(() => animate(760, (t) => line.setAttribute('x2', String(startX + (targetX - startX) * t))), index * 60);
+      window.setTimeout(() => animate(statTiming.lineDuration, (t) => line.setAttribute('x2', String(startX + (targetX - startX) * t))), index * statTiming.lineStagger);
     });
   };
 
@@ -1516,12 +1586,12 @@ function initializeStatisticsPage() {
 
   charts.forEach((chart) => observer.observe(chart));
 
-  const scheduleRandomLoop = (chart, callback) => {
+  const scheduleRandomLoop = (chart, callback, getDelay = randomDelay) => {
     const run = () => {
       window.setTimeout(() => {
         if (activeCharts.has(chart)) callback();
         run();
-      }, randomDelay());
+      }, getDelay());
     };
     run();
   };
@@ -1542,19 +1612,22 @@ function initializeStatisticsPage() {
     label.dataset.statCurrent = String(current - 1);
     renderLiveValue(label);
 
-    const points = (line.getAttribute('points') || '').trim().split(/\s+/).filter(Boolean).map((pair) => {
+    const pointPairs = (line.getAttribute('points') || '').trim().split(/\s+/).filter(Boolean);
+    const points = pointPairs.map((pair, pointIndex) => {
       const [x, y] = pair.split(',').map(Number);
       if (!Number.isFinite(x) || !Number.isFinite(y)) return pair;
+      if (pointIndex !== pointPairs.length - 1) return pair;
       return `${x},${y + 1}`;
     }).join(' ');
     if (points) line.setAttribute('points', points);
 
     const dots = Array.from(svg.querySelectorAll('circle.dot')).slice(index * 6, index * 6 + 6);
-    dots.forEach((dot) => {
-      const cy = Number(dot.getAttribute('cy') || 0);
-      if (Number.isFinite(cy)) dot.setAttribute('cy', String(cy + 1));
-    });
-    fadePulse(label, line, ...dots);
+    const currentDot = dots.at(-1);
+    if (currentDot) {
+      const cy = Number(currentDot.getAttribute('cy') || 0);
+      if (Number.isFinite(cy)) currentDot.setAttribute('cy', String(cy + 1));
+    }
+    fadePulse(label, line, currentDot);
   };
 
   const updateAge = (chart) => {
@@ -1591,7 +1664,7 @@ function initializeStatisticsPage() {
     const target36Width = next36 * scale36;
 
     fadePulse(label65, label36, row65, row36);
-    animate(900, (t) => {
+    animate(statTiming.ageLiveDuration, (t) => {
       const width65 = start65Width + (target65Width - start65Width) * t;
       const width36 = start36Width + (target36Width - start36Width) * t;
       row65.setAttribute('width', String(width65));
@@ -1646,7 +1719,7 @@ function initializeStatisticsPage() {
     const startY = Number(rect.getAttribute('y') || baseline);
 
     fadePulse(rect, label);
-    animate(900, (t) => {
+    animate(statTiming.ageLiveDuration, (t) => {
       const height = startHeight + (nextHeight - startHeight) * t;
       const y = startY + (nextY - startY) * t;
       rect.setAttribute('height', String(height));
@@ -1658,25 +1731,27 @@ function initializeStatisticsPage() {
   const updateContinuity = (chart) => {
     const svg = getSvg(chart);
     if (!svg) return;
-    const labels = Array.from(svg.querySelectorAll('text[data-stat-live="true"]')).filter((text) => Number(text.dataset.statCurrent || 0) > 0);
-    const label = randomItem(labels);
-    if (!label) return;
+    const rows = Array.from(svg.querySelectorAll('line.value')).map((line) => {
+      const label = line.nextElementSibling;
+      if (!label || label.dataset.statLive !== 'true') return null;
+      return { line, label };
+    }).filter((row) => row && Number(row.label.dataset.statCurrent || 0) > 0);
+    const row = randomItem(rows);
+    if (!row) return;
 
-    const labelsInOrder = Array.from(svg.querySelectorAll('text[data-stat-live="true"]'));
-    const lines = Array.from(svg.querySelectorAll('line.value'));
-    const index = labelsInOrder.indexOf(label);
-    const line = lines[index];
+    const { line, label } = row;
     const current = Number(label.dataset.statCurrent || label.dataset.statValue || 0);
     if (!Number.isFinite(current) || current <= 0) return;
 
-    const next = current - 1;
+    const next = Math.max(0, current - 1);
     label.dataset.statCurrent = String(next);
     renderLiveValue(label);
 
     if (line) {
       const x1 = Number(line.getAttribute('x1') || 140);
       const scale = Number(line.dataset.statScale || 2.3);
-      const nextX2 = x1 + next * scale;
+      const baseX2 = Number(line.dataset.statBaseX2 || line.previousElementSibling?.getAttribute('x2') || 430);
+      const nextX2 = Math.min(baseX2, Math.max(x1, x1 + next * scale));
       line.setAttribute('x2', String(nextX2));
       line.dataset.statTargetX2 = String(nextX2);
       fadePulse(label, line);
@@ -1687,7 +1762,7 @@ function initializeStatisticsPage() {
 
   charts.forEach((chart) => {
     if (chart.classList.contains('stat-chart--population')) scheduleRandomLoop(chart, () => updatePopulation(chart));
-    if (chart.classList.contains('stat-chart--age')) scheduleRandomLoop(chart, () => updateAge(chart));
+    if (chart.classList.contains('stat-chart--age')) scheduleRandomLoop(chart, () => updateAge(chart), ageRandomDelay);
     if (chart.classList.contains('stat-chart--births')) scheduleRandomLoop(chart, () => updateBirths(chart));
     if (chart.classList.contains('stat-chart--houses')) scheduleRandomLoop(chart, () => updateHouses(chart));
     if (chart.classList.contains('stat-chart--continuity')) scheduleRandomLoop(chart, () => updateContinuity(chart));

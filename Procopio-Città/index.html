@@ -28,7 +28,7 @@
             <button type="button" class="p text-justify bg-transparent border-0 p-0 cursor-pointer select-none" data-archive-toggle aria-controls="archive-rows" aria-expanded="true">Regione</button>
             <button type="button" class="p text-justify bg-transparent border-0 p-0 cursor-pointer select-none" data-archive-toggle aria-controls="archive-rows" aria-expanded="true">Abitanti</button>
             <button type="button" class="p text-justify bg-transparent border-0 p-0 cursor-pointer select-none" data-archive-toggle aria-controls="archive-rows" aria-expanded="true">Documento</button>
-            <form action="/" onsubmit="return false;">
+            <form class="archive-search-form" action="/" onsubmit="return false;">
               <label for="search" class="sr-only">Ricerca</label>
               <input
               id="search"
@@ -36,6 +36,7 @@
               placeholder="Ricerca"
               class="w-full border-b border-myBlack bg-transparent text-myBlack outline-none placeholder:text-muted"
               />
+              <button class="archive-search-clear" id="archive-search-clear" type="button" aria-label="Cancella ricerca" hidden>✕</button>
               </form>
               </div>
                 <button id="archive-mobile-filter-close" class="archive-mobile-filter-close" type="button" aria-label="Chiudi filtri">✕</button>
@@ -80,16 +81,19 @@
 <p>Copyright © 2026 <br/>Tutti i diritti riservati a Fondazione Scorza</p>
 </div>
 <div class="footer-item">
-<p>Via XX Settembre,<br/>88050 Zagara (CZ)</p>
+<p><a href="https://www.google.com/maps/search/?api=1&amp;query=Via%20XX%20Settembre%2C%20Zagarise%20Catanzaro" target="_blank" rel="noopener">Via XX Settembre,<br/>88050 Zagarise (CZ)</a></p>
 </div>
 <div class="footer-item">
-<p><a href="#">Instagram</a><br/><a href="#">Facebook</a><br/><a href="#">Contattaci</a></p>
+<p><a href="#">Instagram</a><br/><a href="#">Facebook</a><br/><a href="mailto:vittoriascorza@gmail.com">Contattaci</a></p>
 </div>
 <div class="footer-item">
 <p><a href="#">Privacy Policy</a><br/><a href="#">Cookie</a><br/><a href="#">Accessibilità</a></p>
 </div>
 <div class="footer-item">
+<form class="footer-search-form" action="/" onsubmit="return false;">
 <input aria-label="Ricerca" class="footer-search" placeholder="Ricerca" type="search"/>
+<button class="footer-search-clear" type="button" aria-label="Cancella ricerca" hidden>✕</button>
+</form>
 </div>
 <div></div>
 </div>
